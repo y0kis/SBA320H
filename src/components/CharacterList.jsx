@@ -30,10 +30,12 @@ function CharacterList() {
     }, []);
 
     // Fetch data for the character based on the search term
+    // Prevent default from submission behavior
+    // If the search term is empty, do nothing
     const handleSearchSubmit = async (e) => {
-        e.preventDefault(); // Prevent default form submission behavior
+        e.preventDefault(); 
 
-        if (!searchTerm) return; // If the search term is empty, do nothing
+        if (!searchTerm) return; 
 
         setLoading(true);
         setError(null);
